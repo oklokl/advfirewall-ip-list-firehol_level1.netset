@@ -27,7 +27,7 @@ https://kin.naver.com/qna/detail.naver?d1id=1&dirId=104&docId=419918246&scrollTo
 l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset)
 다운로드 주소
 
-https://iplists.firehol.org
+https://iplists.firehol.org https://github.com/firehol/blocklist-ipsets/commits/master/firehol_level1.netset
 제공 싸이트 악성 ip를 리스트로 제공 하는 싸이트 입니다. 하지만 리눅스 기반이기 때문에 윈도우에 맞지 않아서 제가 찾다가 만들게 되었습니다.
 
 배치 파일은 명령 프롬포트를 관리자 권한으로 하셔서 실행 하셔야 합니다 cmd 관리자 권한 실행 확장자는 bat로 되어 있어야 하고 
