@@ -67,7 +67,7 @@ gpupdate /force
 ```
 del %temp%\advfirewall_file.wfw
 ```
-먼져 있을수 있으니 제거 부터 해주세요. 또는 백업 파일 advfirewall_file 이름으로 변경 하거나 백업 할때 advfirewall_file222 이런식으로요
+먼져 있을수 있으니 제거 부터 해주세요. 또는 백업 파일 advfirewall_file.wfw 이름으로 변경 하거나 백업 할때 advfirewall_file222.wfw 이런식으로요
 ```
 netsh advfirewall export "%temp%\advfirewall_file.wfw"
 ```
