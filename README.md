@@ -69,3 +69,30 @@ netsh advfirewall import "%temp%\advfirewall_file.wfw"
 ```
 복구
 
+```
+
+.
+
+notepad  %systemroot%\system32\LogFiles\Firewall\pfirewall.log
+```
+로그 보는 방법 인터넷이 안될때 로그 부분을 보세요.
+
+```
+Powershell -Command "& {Start-Process -FilePath """cmd""" -ArgumentList """/c""","""start""","""notepad""",""""%systemroot%\system32\LogFiles\Firewall\pfirewall.log""""-Verb RunAs}"
+```
+로그 바로 가기 만들기. 로그가 켜지지 않고 관리자 권한을 원할 경우 활용 할수 있어요. https://cafe.daum.net/candan/AurF/100 전승환님께서 만들어 주셨습니다.
+
+어베스트 방어벽이 활성화 되어 있으면 윈도우 기본 방어벽을 사용 못하니 참고 하시고요 http://www.avast.com/index 무료 방어벽 있는 중에 지금 애가 가장 좋아요.
+
+https://www.ahnlab.com/kr/site/product/productView.do?prodSeq=8&tab=14 
+
+v3 라이프 사용 하지만 방어벽이 없는 분들은 쓸만 할꺼에요.
+
+기타.
+
+https://www.henrypp.org/product/simplewall
+
+이 프로그램 좋아요 가볍고. 이것도 기본 방어벽을 사용 하여 차단 하는 기능을 합니다.
+
+https://youtu.be/h_woyjWTsq4 사용법 영상이에요. 처음에는 무지 어려운대.. 
+
