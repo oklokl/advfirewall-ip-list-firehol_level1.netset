@@ -15,7 +15,9 @@ http://www.johnwillis.com/2015/12/windows-how-to-firewall-block-list-of.html
 이 블러그를 보고 만들었습니다
 
 https://stackoverflow.com/questions/72291436/findstr-this-is-a-batch-file-but-it-doesnt-work-very-well
+
 https://kin.naver.com/qna/detail.nhn?d1id=1&dirId=104&docId=393122073
+
 https://kin.naver.com/qna/detail.naver?d1id=1&dirId=104&docId=419918246&scrollTo=answer1
 도와주신분
 
