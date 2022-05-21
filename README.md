@@ -49,13 +49,13 @@ https://iplists.firehol.org https://github.com/firehol/blocklist-ipsets/commits/
 
 파일 정보.
 
-710.bat(아웃,인) 외부 연결, 내부 연결 양쪽다 차단 (in,out) block
+710.bat(아웃,인) 외부 연결, 내부 연결 양쪽다 차단 (in,out) block [a high level]
 
-810.bat(인) 외부에서 들어 오는 연결만 차단 (in) block
+810.bat(인) 외부에서 들어 오는 연결만 차단 (in) block [recommend]
 
-910.bat(아웃,인) 실행 할때 등록하는 ip 출력 버전 (in,out) block
+910.bat(아웃,인) 실행 할때 등록하는 ip 출력 버전 (in,out) block [Meaningless]
 
-12.bat(아웃,인) 등록 할때 삭제 할때 숫자 카운팅이 있는 버전 (in,out) block 전승환님과 모모님께서 만들어,수정 해주심
+12.bat(아웃,인) 등록 할때 삭제 할때 숫자 카운팅이 있는 버전 (in,out) block 전승환님과 모모님께서 만들어,수정 해주심 [experimental]
 
 차단 되는 규칙은 양쪽 모두 막으면 5천개 정도 되고 한쪽만 막으면 2500개 정도 되네요.
 
