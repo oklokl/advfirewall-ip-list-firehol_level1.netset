@@ -76,6 +76,7 @@ netsh advfirewall import "%temp%\advfirewall_file.wfw"
 
 .
 
+
 notepad  %systemroot%\system32\LogFiles\Firewall\pfirewall.log
 ```
 로그 보는 방법 인터넷이 안될때 로그 부분을 보세요.
