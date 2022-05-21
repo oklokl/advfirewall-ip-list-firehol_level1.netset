@@ -14,8 +14,8 @@ https://stackoverflow.com/questions/72291436/findstr-this-is-a-batch-file-but-it
 https://kin.naver.com/qna/detail.nhn?d1id=1&dirId=104&docId=393122073
 도와주신분
 
-https://iplists.firehol.org/files/fireho
-l_level1.netset
+[https://iplists.firehol.org/files/fireho
+l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset)
 다운로드 주소
 
 https://iplists.firehol.org
