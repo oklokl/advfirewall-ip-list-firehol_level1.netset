@@ -16,6 +16,7 @@ http://www.johnwillis.com/2015/12/windows-how-to-firewall-block-list-of.html
 
 https://stackoverflow.com/questions/72291436/findstr-this-is-a-batch-file-but-it-doesnt-work-very-well
 https://kin.naver.com/qna/detail.nhn?d1id=1&dirId=104&docId=393122073
+https://kin.naver.com/qna/detail.naver?d1id=1&dirId=104&docId=419918246&scrollTo=answer1
 도와주신분
 
 [https://iplists.firehol.org/files/fireho
