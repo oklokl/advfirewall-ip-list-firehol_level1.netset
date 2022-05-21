@@ -47,17 +47,25 @@ https://iplists.firehol.org
 
 수동으로 제거 하려면 또는 로그 켜려면 윈도우키+R  WF.msc 
 
-gpupdate /force 정책 업데이트 이것을 해야 적용 됩니다. 수동으로 수정 한후.
+```
+gpupdate /force 
+```
+
+정책 업데이트 이것을 해야 적용 됩니다. 수동으로 수정 한후.
 
 방어벽 정책 백업 하기
 
 .
 
 .
-
+```
 netsh advfirewall export "%temp%\advfirewall_file.wfw"
+```
 백업
 
+
+```
 netsh advfirewall import "%temp%\advfirewall_file.wfw"
+```
 복구
 
