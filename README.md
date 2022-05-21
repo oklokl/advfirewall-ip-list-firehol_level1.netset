@@ -3,8 +3,9 @@ windows default firewall.. Utilize. Easy registration. > firehol_level1.netset
 
 https://youtu.be/LmL0vJG7qqk
 설치 방법 입니다 install
+![11](https://user-images.githubusercontent.com/1571600/169641629-b1fe40a7-03bc-4e7f-a19f-5c0f9d8dbfcd.png)
 
-![11](https://user-images.githubusercontent.com/1571600/169641570-c70baeea-21c7-4c45-99bb-3d67e0376743.png)
+
 
 
 https://cafe.daum.net/candan/AurF/102
