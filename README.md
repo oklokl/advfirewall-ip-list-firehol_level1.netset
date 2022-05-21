@@ -110,3 +110,5 @@ https://www.henrypp.org/product/simplewall
 
 https://youtu.be/h_woyjWTsq4 사용법 영상이에요. 처음에는 무지 어려운대.. 
 
+
+마지막으로 저는 컴퓨터 잘 못하기 때문에 대부분 지식인에 물어 봐서 수정 하곤 해요. 저에게 물어 보기 보다는 구글 검색이나 지식인이 도움이 되실꺼에요.
