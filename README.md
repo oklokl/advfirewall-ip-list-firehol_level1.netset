@@ -1,6 +1,9 @@
 # advfirewall-ip-list-firehol_level1.netset
 windows default firewall.. Utilize. Easy registration. > firehol_level1.netset
 
+https://youtu.be/LmL0vJG7qqk
+설치 방법 입니다 install
+
 https://cafe.daum.net/candan/AurF/102
 나의 개인 홈페이지 입니다. 여기에 주로 업로드 합니다.
 
