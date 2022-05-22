@@ -59,6 +59,8 @@ https://iplists.firehol.org https://github.com/firehol/blocklist-ipsets/commits/
 
 차단 되는 규칙은 양쪽 모두 막으면 5천개 정도 되고 한쪽만 막으면 2500개 정도 되네요.
 
+GJ20220522.bat(아웃,인) 게이지바 기능 추가. 전승환님께서 많이 수정해주셨습니다. 2022.05.22
+
 .
 
 .
