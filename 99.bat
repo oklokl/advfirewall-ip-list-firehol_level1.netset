@@ -43,11 +43,11 @@ type %temp%\ip2location_country_ru.netset >> %temp%\out.txt
 type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
 
 :: 걸러내기
-type %temp%\out.txt | findstr /blv "# 0.0.0. 192.168.0.0/16 224.0.0.0/16 172.30. 192.168. 224.0. 168.126. 210.220. 219.250. 61.41. 1.214. 164.124. 203.248. 180.182. 94.140. 208.67. 1.1. 1.0. 8.8. 9.9. 149.112. 194.242. 185.222. 45.11. 10.0. 172.162" > %temp%\out.txt
+type %temp%\out.txt | findstr /blv "# 0.0.0. 192.168.0.0/16 224.0.0.0/16 172.30. 192.168. 224.0. 168.126. 210.220. 219.250. 61.41. 1.214. 164.124. 203.248. 180.182. 94.140. 208.67. 1.1. 1.0. 8.8. 9.9. 149.112. 194.242. 185.222. 45.11. 10.0. 172.162" > %temp%\out2.txt
 
 
 :: 최종 한국은 제외 하기
-findstr /VG:%temp%\ip2location_country_kr.netset < %temp%\out.txt > %temp%\out.txt
+findstr /VG:%temp%\ip2location_country_kr.netset < %temp%\out2.txt > %temp%\out.txt
 
 :: 중복 제거
 sort /C /UNIQUE "%temp%\out.txt" /O "%temp%\out.txt"
