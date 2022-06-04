@@ -1,0 +1,87 @@
+사용 설명서
+
+https://www.sans.org/blog/windows-firewall-script-to-block-ip-addresses-and-country-network-ranges/
+참고 하세요
+
+https://cafe.daum.net/candan/GGFN/280
+
+파워쉘을 ps1을 실행 하려면 아래와 같이 보안 등급을 낮추어야 합니다. 기본 보안 등급은 ps1를 차단 하는 최고 등급입니다.
+걱정 하지 않으셔도 됩니다 전문가가 만든 것이기 때문에.. 보안에 문제가 생기진 않을꺼에요.
+
+보안 등급 낮추기
+Set-ExecutionPolicy RemoteSigned
+Get-ExecutionPolicy
+
+보안 등급 예전으로 돌리기
+Set-ExecutionPolicy Restricted
+Get-ExecutionPolicy
+
+이렇게 하셨다면. 이제 실행 하기만 하면 되네요.
+
+
+파일을 바탕 화면으로 복사 해주세요.
+
+바탕 화면으로 이동 하면 아래 명령어
+cd ~\Desktop
+cd $env:USERPROFILE\Desktop
+
+
+
+설명: Import-FirewallBlocklist.ps1 -InputFile 홍길동_입력파일.txt 예를 들자면. 우리가 만든 파일은  blockit.csv 이니깐. 적용 하려면 
+
+설명: .\Import-FirewallBlocklist.ps1 -InputFile blockit.csv 이렇게 하시면 되네요. 한대 파일이 바탕 화면에 있으니깐. 그리고 파워쉘은 맨 앞에 무적건 . 점 하고 \를 해야 실행이 되네요
+
+등록 하기 오래 걸려요.
+.\Import-FirewallBlocklist.ps1 -InputFile "$env:USERPROFILE\Desktop\blockit.csv"
+(바탕 화면 바로 가기 경로가 지랄 맞게 변했네요 ㅠㅠ.. 
+
+
+삭제 하기
+.\Import-FirewallBlocklist.ps1 -RuleName blockit -DeleteOnly
+
+삭제는 자신이 등록한 이름과 동일 하게 해주면 되네요. 전 blockit가 제가 등록한 이름이니 이걸 삭제 하면 되겠죠?
+
+역시 전문가가 만든거라 너무 잘되네요 전문가의 손길을 느껴보세요 ㅠㅠ 부럽다.. 저도 이렇게 하고 싶은대 ㅋㅋ 아쉽네요.
+
+방어벽을 켜려면 
+윈도우 + R 눌러 주시고요 엔터
+WF.msc
+
+이렇게 하면 켜지네요.
+
+
+
+파일은 
+https://mirror.dk.team.blue/firehol/ip2location_country/ 
+여기어서 받으시면 되요 ip 리스트
+
+그리고 폴더 열기 하시고요
+%temp% 폴더에 
+ip2location_country_cn.netset
+파일들이 있을꺼에요 저장 해 놨다가 사용 하셔도 되고요.
+out.txt 파일이 우리가 만들고 남은 파일이에요 여기에 중국 러시아 북한 ip가 걸러져서 있네요.
+
+만약 중국을 차단 하고 싶지 않다면
+type %temp%\ip2location_country_cn.netset > %temp%\out.txt
+type %temp%\ip2location_country_ru.netset >> %temp%\out.txt
+type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
+이게 기본 예문이고
+
+이렇게 아래 처럼 바꾸시면 되겠죠 앞에 :: 하고 그리고 > 이걸 하나를 줄였어요 이럼 지우고 새로 쓰는 거거든요. >> 두번 하면 기존거에 추가고요.
+:: type %temp%\ip2location_country_cn.netset > %temp%\out.txt
+type %temp%\ip2location_country_ru.netset > %temp%\out.txt
+type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
+
+
+
+
+기타 사항
+방어벽 백업 파일 지우기
+del %temp%\advfirewall_file.wfw
+
+방어벽 백업 하기
+netsh advfirewall export "%temp%\advfirewall_file.wfw"
+
+방어벽 백업한 파일을 복구 하기
+netsh advfirewall import "%temp%\advfirewall_file.wfw"
+
