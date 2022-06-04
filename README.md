@@ -132,3 +132,17 @@ https://youtu.be/h_woyjWTsq4 사용법 영상이에요. 처음에는 무지 어�
 https://namu.wiki/w/DNS 구글 dns, http://www.codns.com/b/B05-52 회사별 공유기 접속 번호, 기타 vpn 192.168.0.1 을 차단 하면 공유기 관리자 접속이 안되네요.
 
 기타 192.168.0.1의 경우 앞 글자만 적으면 되네요 그럼 뒷자도 자동으로 삭제 되요 192.168. 이렇게만 적어 주면 되네요.
+
+.
+
+[전문가 주소]
+
+https://www.sans.org/blog/windows-firewall-script-to-block-ip-addresses-and-country-network-ranges/
+
+https://blueteampowershell.com/  여기에서 파일을 다운로드 받으시면 되네요.
+
+드디어 찾았네요 전문가가 만든 것이라 정말로 잘 되네요. 오래 걸리지도 않고. 
+
+참고 하세요
+
+https://cafe.daum.net/candan/AurF/104 전문가 주소를 활용한 방법 https://youtu.be/-D5GlUwQdPE
