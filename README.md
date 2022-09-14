@@ -10,7 +10,7 @@ https://youtu.be/LmL0vJG7qqk
 
 https://cafe.daum.net/candan/AurF/102
 
-https://cafe.daum.net/candan/AurF/105 최종버전 v4.bat 200 버전을 받으시면 됩니다.
+https://cafe.daum.net/candan/AurF/105 최종버전 v5.bat 200 버전을 받으시면 됩니다. (bat 파일 저장은 UTF-8 BOM으로 저장 하셔야 정상 작동 하네요)
 
 나의 개인 홈페이지 입니다. 여기에 주로 업로드 합니다.
 
