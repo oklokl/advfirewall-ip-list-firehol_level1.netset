@@ -1,6 +1,6 @@
 ﻿    @echo off
 setlocal enabledelayedexpansion
-chcp 65001 > nul
+chcp 65001 > null
 cd /d "%~dp0"
 
     REM if "%1"=="list" (
