@@ -3,53 +3,53 @@ setlocal enabledelayedexpansion
 
 :main
 @echo. 
-@echo		Y (±×·¸´Ù)		±ÔÄ¢À» Àû¿ë ÇÒ±î¿ä?			
-@echo		N (Á¾·á)		¾Æ¹« °Íµµ ÇÏÁö ¾Ê°í Á¾·á ÇÑ´Ù	   
-@echo		D (±ÔÄ¢Á¦°Å)		ÀÚÀÛÀ¸·Î ¸¸µç ±ÔÄ¢À» ¸ðµÎ Á¦°Å ÇÑ´Ù
-@echo		C (±¹°¡Â÷´Ü)		Áß±¹ ·¯½Ã¾Æ ºÏÇÑ ¾Ç¼º ip Â÷´Ü	 
-@echo		R (±¹°¡Â÷´Ü)		·¯½Ã¾Æ ºÏÇÑ ¾Ç¼º ip Â÷´Ü		 
-@echo		B (¹é¾÷)		±ÔÄ¢À» ¹é¾÷ ÇÕ´Ï´Ù.			 
-@echo		S (º¹±¸)		³»°¡ ÀúÀåÇÑ ±ÔÄ¢º¹±¸	          
+@echo		Y (ê·¸ë ‡ë‹¤)		ê·œì¹™ì„ ì ìš© í• ê¹Œìš”?			
+@echo		N (ì¢…ë£Œ)		ì•„ë¬´ ê²ƒë„ í•˜ì§€ ì•Šê³  ì¢…ë£Œ í•œë‹¤	   
+@echo		D (ê·œì¹™ì œê±°)		ìžìž‘ìœ¼ë¡œ ë§Œë“  ê·œì¹™ì„ ëª¨ë‘ ì œê±° í•œë‹¤
+@echo		C (êµ­ê°€ì°¨ë‹¨)		ì¤‘êµ­ ëŸ¬ì‹œì•„ ë¶í•œ ì•…ì„± ip ì°¨ë‹¨	 
+@echo		R (êµ­ê°€ì°¨ë‹¨)		ëŸ¬ì‹œì•„ ë¶í•œ ì•…ì„± ip ì°¨ë‹¨		 
+@echo		B (ë°±ì—…)		ê·œì¹™ì„ ë°±ì—… í•©ë‹ˆë‹¤.			 
+@echo		S (ë³µêµ¬)		ë‚´ê°€ ì €ìž¥í•œ ê·œì¹™ë³µêµ¬	          
 @echo.
-@echo		¸¸ÀÏÀ» À§ÇØ¼­ ¹Ì¸® ¹é¾÷À» ÇÏ¼¼¿ä. 
-@echo		´Ù¸¥ ¸ÕÁ® ±ÔÄ¢À» Àû¿ë ÇÏ·Á¸é ±ÔÄ¢Á¦°Å¸¦ ÇÏ¼¼¿ä.
+@echo		ë§Œì¼ì„ ìœ„í•´ì„œ ë¯¸ë¦¬ ë°±ì—…ì„ í•˜ì„¸ìš”. 
+@echo		ë‹¤ë¥¸ ë¨¼ì ¸ ê·œì¹™ì„ ì ìš© í•˜ë ¤ë©´ ê·œì¹™ì œê±°ë¥¼ í•˜ì„¸ìš”.
 @echo. 
 set choice=
-set /p choice=¼±ÅÃ ÇÏ¼¼¿ä.
+set /p choice=ì„ íƒ í•˜ì„¸ìš”.
 echo "%choice%".|findstr /x /i "\"[yndcrbs]\"\." 2>nul>nul&&goto :%choice%||goto :main
 
 goto :quit
 
 :y	
-REM ¾Ç¼º¸¸ Â÷´Ü ÇÏ´Â ¹öÀü
-REM ´Ù¿î·Îµå ÇÏ±â Áß±¹ cn ·¯½Ã¾Æ ru ºÏÇÑ kp cn.netset Â÷´Ü ÇÏ°í ½ÍÁö ¾ÊÀº ³ª¶ó°¡ ÀÖ´Ù¸é ¾Õ¿¡ ÁÖ¼® Ã³¸® REM ÇÏ¼¼¿ä. https://mirror.dk.team.blue/firehol/ip2location_country/ Á¦°ø ÇÕ´Ï´Ù 
+REM ì•…ì„±ë§Œ ì°¨ë‹¨ í•˜ëŠ” ë²„ì „
+REM ë‹¤ìš´ë¡œë“œ í•˜ê¸° ì¤‘êµ­ cn ëŸ¬ì‹œì•„ ru ë¶í•œ kp cn.netset ì°¨ë‹¨ í•˜ê³  ì‹¶ì§€ ì•Šì€ ë‚˜ë¼ê°€ ìžˆë‹¤ë©´ ì•žì— ì£¼ì„ ì²˜ë¦¬ REM í•˜ì„¸ìš”. https://mirror.dk.team.blue/firehol/ip2location_country/ ì œê³µ í•©ë‹ˆë‹¤ 
 powershell -Command "& {Invoke-WebRequest -Uri "https://iplists.firehol.org/files/firehol_level1.netset" -OutFile $env:temp\firehol_level1.netset}"
 REM powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_cn.netset" -OutFile $env:temp%\ip2location_country_cn.netset}"
 REM powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_ru.netset" -OutFile $env:temp%\ip2location_country_ru.netset}"
 REM powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_kp.netset" -OutFile $env:temp%\ip2location_country_kp.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_kr.netset" -OutFile $env:temp%\ip2location_country_kr.netset}"
 
-REM ¸ðµÎ ´Ù ÇÏ³ª¿¡ ¹¶Ä¡±â
+REM ëª¨ë‘ ë‹¤ í•˜ë‚˜ì— ë­‰ì¹˜ê¸°
 type "%temp%\firehol_level1.netset" > %temp%\out.txt
 REM type %temp%\ip2location_country_cn.netset >> %temp%\out.txt
 REM type %temp%\ip2location_country_ru.netset >> %temp%\out.txt
 REM type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
 
-REM °É·¯³»±â °°Àº out.txt ¶ó¼­ out2.txt·Î ÇØ¾ß Á¤»óÀûÀ¸·Î ÀÛµ¿ µÈ´Ù.
-REM Â÷´Ü ÁÖ¼Ò¿¡¼­ °¡Á¤Áý °øÀ¯±â ±¸±Û dns¸¦ Á¦¿Ü ÇÕ´Ï´Ù. ±×·¡¾ß ÀÎÅÍ³ÝÀÌ µÇ´Ï±ñ¿ä.
+REM ê±¸ëŸ¬ë‚´ê¸° ê°™ì€ out.txt ë¼ì„œ out2.txtë¡œ í•´ì•¼ ì •ìƒì ìœ¼ë¡œ ìž‘ë™ ëœë‹¤.
+REM ì°¨ë‹¨ ì£¼ì†Œì—ì„œ ê°€ì •ì§‘ ê³µìœ ê¸° êµ¬ê¸€ dnsë¥¼ ì œì™¸ í•©ë‹ˆë‹¤. ê·¸ëž˜ì•¼ ì¸í„°ë„·ì´ ë˜ë‹ˆê¹ìš”.
 type %temp%\out.txt | findstr /blv "# 0.0.0. 192.168.0.0/16 224.0.0.0/16 172.30. 192.168. 224.0. 168.126. 210.220. 219.250. 61.41. 1.214. 164.124. 203.248. 180.182. 94.140. 208.67. 1.1. 1.0. 8.8. 9.9. 149.112. 194.242. 185.222. 45.11. 10.0. 172.162" > %temp%\out2.txt
 
-REM Â÷´Ü¸ñ·Ï¿¡¼­ È¤½Ã³ª ÀÖÀ» ÇÑ±¹Àº Á¦¿Ü ÇÏ±â
+REM ì°¨ë‹¨ëª©ë¡ì—ì„œ í˜¹ì‹œë‚˜ ìžˆì„ í•œêµ­ì€ ì œì™¸ í•˜ê¸°
 findstr /VG:%temp%\ip2location_country_kr.netset < %temp%\out2.txt > %temp%\out.txt
 
-REM Áßº¹ Á¦°Å
+REM ì¤‘ë³µ ì œê±°
 sort /C /UNIQUE "%temp%\out.txt" /O "%temp%\out.txt"
 
-REM ´Ù¸¥ ÀÌ¸§À¸·Î ÀúÀå
+REM ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì €ìž¥
 copy %temp%\out.txt "%temp%\out_BAD_ip.csv" /y
 
-REM 200 ÁÙ¾¿ °¡Á®¿Í¼­ ÇÑ ÁÙ·Î ¸¸µé¾î¼­ È­¸é¿¡ Ãâ·Â.
-REM 200 ÁÙ¾¿ ip µî·ÏÇÏ±â
+REM 200 ì¤„ì”© ê°€ì ¸ì™€ì„œ í•œ ì¤„ë¡œ ë§Œë“¤ì–´ì„œ í™”ë©´ì— ì¶œë ¥.
+REM 200 ì¤„ì”© ip ë“±ë¡í•˜ê¸°
 set /a CountLine=0
 set "str="
 for /f "delims=" %%a in ('type "%temp%\out_BAD_ip.csv"') do (
@@ -64,64 +64,64 @@ set "str="
 )
 )
 
-REM ±ÔÄ¢À» ´Ù µî·Ï ÇÏ°í ¿À´Â Àå¼Ò
+REM ê·œì¹™ì„ ë‹¤ ë“±ë¡ í•˜ê³  ì˜¤ëŠ” ìž¥ì†Œ
 gpupdate /force
 echo.
-echo [¾Ë¸²: ¹æ¾îº® ¼³Á¤]
-echo À©µµ¿ìÅ°+R  WF.msc
+echo [ì•Œë¦¼: ë°©ì–´ë²½ ì„¤ì •]
+echo ìœˆë„ìš°í‚¤+R  WF.msc
 echo.
 goto :quit
 
 :n
-REM ¾Æ¹« °Íµµ ÇÏÁö ¾Ê°í ³ª°¡±â
+REM ì•„ë¬´ ê²ƒë„ í•˜ì§€ ì•Šê³  ë‚˜ê°€ê¸°
 echo.
-echo [¾Ë¸²]
-echo ¾Æ¹« °Íµµ ÇÏÁö ¾Ê°í ¹èÄ¡ ÆÄÀÏÀ» Á¾·á ÇÕ´Ï´Ù.
+echo [ì•Œë¦¼]
+echo ì•„ë¬´ ê²ƒë„ í•˜ì§€ ì•Šê³  ë°°ì¹˜ íŒŒì¼ì„ ì¢…ë£Œ í•©ë‹ˆë‹¤.
 echo.
 goto :quit
 
 :d
 echo.
-echo DEL! ÀÚÀÛÀ¸·Î ¸¸µå½Å Blockit ±ÔÄ¢À» ¸ðµÎ Áö¿ì°Ú½À´Ï´Ù. °ÆÁ¤ ÇÏÁö ¸¶¼¼¿ä ´Ù¸¥ °ÍÀº Áö¿öÁöÁö ¾Ê½À´Ï´Ù.
+echo DEL! ìžìž‘ìœ¼ë¡œ ë§Œë“œì‹  Blockit ê·œì¹™ì„ ëª¨ë‘ ì§€ìš°ê² ìŠµë‹ˆë‹¤. ê±±ì • í•˜ì§€ ë§ˆì„¸ìš” ë‹¤ë¥¸ ê²ƒì€ ì§€ì›Œì§€ì§€ ì•ŠìŠµë‹ˆë‹¤.
 echo.
 netsh advfirewall firewall delete rule name="Blockit"
 gpupdate /force
 echo.
-echo [¾Ë¸²: ¹æ¾îº® ¼³Á¤]
-echo À©µµ¿ìÅ°+R  WF.msc
+echo [ì•Œë¦¼: ë°©ì–´ë²½ ì„¤ì •]
+echo ìœˆë„ìš°í‚¤+R  WF.msc
 echo.
 goto :quit
 
 :c
-REM Áß±¹ ·¯½Ã¾Æ ºÏÇÑ ¾Ç¼º Â÷´Ü ¹öÀü
-REM ´Ù¿î·Îµå ÇÏ±â Áß±¹ cn ·¯½Ã¾Æ ru ºÏÇÑ kp cn.netset Â÷´Ü ÇÏ°í ½ÍÁö ¾ÊÀº ³ª¶ó°¡ ÀÖ´Ù¸é ¾Õ¿¡ ÁÖ¼® Ã³¸® REM ÇÏ¼¼¿ä. https://mirror.dk.team.blue/firehol/ip2location_country/ Á¦°ø ÇÕ´Ï´Ù
+REM ì¤‘êµ­ ëŸ¬ì‹œì•„ ë¶í•œ ì•…ì„± ì°¨ë‹¨ ë²„ì „
+REM ë‹¤ìš´ë¡œë“œ í•˜ê¸° ì¤‘êµ­ cn ëŸ¬ì‹œì•„ ru ë¶í•œ kp cn.netset ì°¨ë‹¨ í•˜ê³  ì‹¶ì§€ ì•Šì€ ë‚˜ë¼ê°€ ìžˆë‹¤ë©´ ì•žì— ì£¼ì„ ì²˜ë¦¬ REM í•˜ì„¸ìš”. https://mirror.dk.team.blue/firehol/ip2location_country/ ì œê³µ í•©ë‹ˆë‹¤
 powershell -Command "& {Invoke-WebRequest -Uri "https://iplists.firehol.org/files/firehol_level1.netset" -OutFile $env:temp\firehol_level1.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_cn.netset" -OutFile $env:temp%\ip2location_country_cn.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_ru.netset" -OutFile $env:temp%\ip2location_country_ru.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_kp.netset" -OutFile $env:temp%\ip2location_country_kp.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_kr.netset" -OutFile $env:temp%\ip2location_country_kr.netset}"
 
-REM ¸ðµÎ ´Ù ÇÏ³ª¿¡ ¹¶Ä¡±â
+REM ëª¨ë‘ ë‹¤ í•˜ë‚˜ì— ë­‰ì¹˜ê¸°
 type %temp%\firehol_level1.netset > %temp%\out.txt
 type %temp%\ip2location_country_cn.netset >> %temp%\out.txt
 type %temp%\ip2location_country_ru.netset >> %temp%\out.txt
 type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
 
-REM °É·¯³»±â °°Àº out.txt ¶ó¼­ out2.txt·Î ÇØ¾ß Á¤»óÀûÀ¸·Î ÀÛµ¿ µÈ´Ù.
-REM Â÷´Ü ÁÖ¼Ò¿¡¼­ °¡Á¤Áý °øÀ¯±â ±¸±Û dns¸¦ Á¦¿Ü ÇÕ´Ï´Ù. ±×·¡¾ß ÀÎÅÍ³ÝÀÌ µÇ´Ï±ñ¿ä.
+REM ê±¸ëŸ¬ë‚´ê¸° ê°™ì€ out.txt ë¼ì„œ out2.txtë¡œ í•´ì•¼ ì •ìƒì ìœ¼ë¡œ ìž‘ë™ ëœë‹¤.
+REM ì°¨ë‹¨ ì£¼ì†Œì—ì„œ ê°€ì •ì§‘ ê³µìœ ê¸° êµ¬ê¸€ dnsë¥¼ ì œì™¸ í•©ë‹ˆë‹¤. ê·¸ëž˜ì•¼ ì¸í„°ë„·ì´ ë˜ë‹ˆê¹ìš”.
 type %temp%\out.txt | findstr /blv "# 0.0.0. 192.168.0.0/16 224.0.0.0/16 172.30. 192.168. 224.0. 168.126. 210.220. 219.250. 61.41. 1.214. 164.124. 203.248. 180.182. 94.140. 208.67. 1.1. 1.0. 8.8. 9.9. 149.112. 194.242. 185.222. 45.11. 10.0. 172.162" > %temp%\out2.txt
 
-REM Â÷´Ü¸ñ·Ï¿¡¼­ È¤½Ã³ª ÀÖÀ» ÇÑ±¹Àº Á¦¿Ü ÇÏ±â
+REM ì°¨ë‹¨ëª©ë¡ì—ì„œ í˜¹ì‹œë‚˜ ìžˆì„ í•œêµ­ì€ ì œì™¸ í•˜ê¸°
 findstr /VG:%temp%\ip2location_country_kr.netset < %temp%\out2.txt > %temp%\out.txt
 
-REM Áßº¹ Á¦°Å
+REM ì¤‘ë³µ ì œê±°
 sort /C /UNIQUE "%temp%\out.txt" /O "%temp%\out.txt"
 
-REM ´Ù¸¥ ÀÌ¸§À¸·Î ÀúÀå
+REM ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì €ìž¥
 copy %temp%\out.txt "%temp%\out_CN_RU_KP_BAD_ip.csv" /y
 
-REM 200 ÁÙ¾¿ °¡Á®¿Í¼­ ÇÑ ÁÙ·Î ¸¸µé¾î¼­ È­¸é¿¡ Ãâ·Â.
-REM 200 ÁÙ¾¿ ip µî·ÏÇÏ±â
+REM 200 ì¤„ì”© ê°€ì ¸ì™€ì„œ í•œ ì¤„ë¡œ ë§Œë“¤ì–´ì„œ í™”ë©´ì— ì¶œë ¥.
+REM 200 ì¤„ì”© ip ë“±ë¡í•˜ê¸°
 set /a CountLine=0
 set "str="
 for /f "delims=" %%a in ('type "%temp%\out_CN_RU_KP_BAD_ip.csv"') do (
@@ -136,44 +136,44 @@ set "str="
 )
 )
 
-REM ±ÔÄ¢À» ´Ù µî·Ï ÇÏ°í ¿À´Â Àå¼Ò
+REM ê·œì¹™ì„ ë‹¤ ë“±ë¡ í•˜ê³  ì˜¤ëŠ” ìž¥ì†Œ
 gpupdate /force
 echo.
-echo [¾Ë¸²: ¹æ¾îº® ¼³Á¤]
-echo À©µµ¿ìÅ°+R  WF.msc
+echo [ì•Œë¦¼: ë°©ì–´ë²½ ì„¤ì •]
+echo ìœˆë„ìš°í‚¤+R  WF.msc
 echo.
 goto :quit
 
 :r
-REM Áß±¹À» Á¦¿Ü ÇÑ ¹öÀü ·¯½Ã¾Æ ºÏÇÑ ¾Ç¼º ip¸¸ Â÷´Ü 
-REM ´Ù¿î·Îµå ÇÏ±â Áß±¹ cn ·¯½Ã¾Æ ru ºÏÇÑ kp cn.netset Â÷´Ü ÇÏ°í ½ÍÁö ¾ÊÀº ³ª¶ó°¡ ÀÖ´Ù¸é ¾Õ¿¡ ÁÖ¼® Ã³¸® REM ÇÏ¼¼¿ä. https://mirror.dk.team.blue/firehol/ip2location_country/ Á¦°ø ÇÕ´Ï´Ù
+REM ì¤‘êµ­ì„ ì œì™¸ í•œ ë²„ì „ ëŸ¬ì‹œì•„ ë¶í•œ ì•…ì„± ipë§Œ ì°¨ë‹¨ 
+REM ë‹¤ìš´ë¡œë“œ í•˜ê¸° ì¤‘êµ­ cn ëŸ¬ì‹œì•„ ru ë¶í•œ kp cn.netset ì°¨ë‹¨ í•˜ê³  ì‹¶ì§€ ì•Šì€ ë‚˜ë¼ê°€ ìžˆë‹¤ë©´ ì•žì— ì£¼ì„ ì²˜ë¦¬ REM í•˜ì„¸ìš”. https://mirror.dk.team.blue/firehol/ip2location_country/ ì œê³µ í•©ë‹ˆë‹¤
 powershell -Command "& {Invoke-WebRequest -Uri "https://iplists.firehol.org/files/firehol_level1.netset" -OutFile $env:temp\firehol_level1.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_cn.netset" -OutFile $env:temp%\ip2location_country_cn.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_ru.netset" -OutFile $env:temp%\ip2location_country_ru.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_kp.netset" -OutFile $env:temp%\ip2location_country_kp.netset}"
 powershell -Command "& {Invoke-WebRequest -Uri "https://mirror.dk.team.blue/firehol/ip2location_country/ip2location_country_kr.netset" -OutFile $env:temp%\ip2location_country_kr.netset}"
 
-REM ¸ðµÎ ´Ù ÇÏ³ª¿¡ ¹¶Ä¡±â
+REM ëª¨ë‘ ë‹¤ í•˜ë‚˜ì— ë­‰ì¹˜ê¸°
 type %temp%\firehol_level1.netset > %temp%\out.txt
 REM type %temp%\ip2location_country_cn.netset >> %temp%\out.txt
 type %temp%\ip2location_country_ru.netset >> %temp%\out.txt
 type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
 
-REM °É·¯³»±â °°Àº out.txt ¶ó¼­ out2.txt·Î ÇØ¾ß Á¤»óÀûÀ¸·Î ÀÛµ¿ µÈ´Ù.
-REM Â÷´Ü ÁÖ¼Ò¿¡¼­ °¡Á¤Áý °øÀ¯±â ±¸±Û dns¸¦ Á¦¿Ü ÇÕ´Ï´Ù. ±×·¡¾ß ÀÎÅÍ³ÝÀÌ µÇ´Ï±ñ¿ä.
+REM ê±¸ëŸ¬ë‚´ê¸° ê°™ì€ out.txt ë¼ì„œ out2.txtë¡œ í•´ì•¼ ì •ìƒì ìœ¼ë¡œ ìž‘ë™ ëœë‹¤.
+REM ì°¨ë‹¨ ì£¼ì†Œì—ì„œ ê°€ì •ì§‘ ê³µìœ ê¸° êµ¬ê¸€ dnsë¥¼ ì œì™¸ í•©ë‹ˆë‹¤. ê·¸ëž˜ì•¼ ì¸í„°ë„·ì´ ë˜ë‹ˆê¹ìš”.
 type %temp%\out.txt | findstr /blv "# 0.0.0. 192.168.0.0/16 224.0.0.0/16 172.30. 192.168. 224.0. 168.126. 210.220. 219.250. 61.41. 1.214. 164.124. 203.248. 180.182. 94.140. 208.67. 1.1. 1.0. 8.8. 9.9. 149.112. 194.242. 185.222. 45.11. 10.0. 172.162" > %temp%\out2.txt
 
-REM Â÷´Ü¸ñ·Ï¿¡¼­ È¤½Ã³ª ÀÖÀ» ÇÑ±¹Àº Á¦¿Ü ÇÏ±â
+REM ì°¨ë‹¨ëª©ë¡ì—ì„œ í˜¹ì‹œë‚˜ ìžˆì„ í•œêµ­ì€ ì œì™¸ í•˜ê¸°
 findstr /VG:%temp%\ip2location_country_kr.netset < %temp%\out2.txt > %temp%\out.txt
 
-REM Áßº¹ Á¦°Å
+REM ì¤‘ë³µ ì œê±°
 sort /C /UNIQUE "%temp%\out.txt" /O "%temp%\out.txt"
 
-REM ´Ù¸¥ ÀÌ¸§À¸·Î ÀúÀå
+REM ë‹¤ë¥¸ ì´ë¦„ìœ¼ë¡œ ì €ìž¥
 copy %temp%\out.txt "%temp%\out_RU_KP_BAD_ip.csv" /y
 
-REM 200 ÁÙ¾¿ °¡Á®¿Í¼­ ÇÑ ÁÙ·Î ¸¸µé¾î¼­ È­¸é¿¡ Ãâ·Â.
-REM 200 ÁÙ¾¿ ip µî·ÏÇÏ±â
+REM 200 ì¤„ì”© ê°€ì ¸ì™€ì„œ í•œ ì¤„ë¡œ ë§Œë“¤ì–´ì„œ í™”ë©´ì— ì¶œë ¥.
+REM 200 ì¤„ì”© ip ë“±ë¡í•˜ê¸°
 set /a CountLine=0
 set "str="
 for /f "delims=" %%a in ('type "%temp%\out_RU_KP_BAD_ip.csv"') do (
@@ -188,35 +188,35 @@ set "str="
 )
 )
 
-REM ±ÔÄ¢À» ´Ù µî·Ï ÇÏ°í ¿À´Â Àå¼Ò
+REM ê·œì¹™ì„ ë‹¤ ë“±ë¡ í•˜ê³  ì˜¤ëŠ” ìž¥ì†Œ
 gpupdate /force
 echo.
-echo [¾Ë¸²: ¹æ¾îº® ¼³Á¤]
-echo À©µµ¿ìÅ°+R  WF.msc
+echo [ì•Œë¦¼: ë°©ì–´ë²½ ì„¤ì •]
+echo ìœˆë„ìš°í‚¤+R  WF.msc
 echo.
 goto :quit
 
 :b
-REM ±ÔÄ¢À» ¹é¾÷ ÇÕ´Ï´Ù
-del /f "%temp%\advfirewall_file.wfw" 2> null
+REM ê·œì¹™ì„ ë°±ì—… í•©ë‹ˆë‹¤
+del /f "%temp%\advfirewall_file.wfw" 2> nul
 netsh advfirewall export "%temp%\advfirewall_file.wfw"
 echo.
-echo [¾Ë¸²: ¹æ¾îº® ¼³Á¤]
-echo À©µµ¿ìÅ°+R  WF.msc
+echo [ì•Œë¦¼: ë°©ì–´ë²½ ì„¤ì •]
+echo ìœˆë„ìš°í‚¤+R  WF.msc
 echo.
 goto :quit
 
 :s
-REM ±ÔÄ¢À» º¹±¸ ÇÕ´Ï´Ù.
-echo ¸ÕÁ® ¹é¾÷À» ÇÏÁö ¾Ê¾Ò´Ù¸é º¹±¸´Â µÇÁö ¾Ê½À´Ï´Ù.
+REM ê·œì¹™ì„ ë³µêµ¬ í•©ë‹ˆë‹¤.
+echo ë¨¼ì ¸ ë°±ì—…ì„ í•˜ì§€ ì•Šì•˜ë‹¤ë©´ ë³µêµ¬ëŠ” ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 netsh advfirewall import "%temp%\advfirewall_file.wfw"
 echo.
-echo [¾Ë¸²: ¹æ¾îº® ¼³Á¤]
-echo À©µµ¿ìÅ°+R  WF.msc
+echo [ì•Œë¦¼: ë°©ì–´ë²½ ì„¤ì •]
+echo ìœˆë„ìš°í‚¤+R  WF.msc
 echo.
 goto :quit
 
 :quit
-REM ÃÖÁ¾ ¸ñÀûÁö ¹èÄ¡ ÆÄÀÏ Á¾·á
+REM ìµœì¢… ëª©ì ì§€ ë°°ì¹˜ íŒŒì¼ ì¢…ë£Œ
 endlocal
 pause
