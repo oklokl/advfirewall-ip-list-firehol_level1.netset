@@ -3,5 +3,8 @@ echo 랜덤한 중간 부분이 있으면 찾기 어려운대 이렇게 하면 �
 for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\Microsoft\EdgeWebView\Application\msedgewebview2.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block)
 for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\Microsoft\EdgeWebView\Application\msedgewebview2.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=out program="%a" action=block)
 
-for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\WindowsApps\msteams.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block)
-for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\WindowsApps\msteams.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=out program="%a" action=block)
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\msteams.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block)
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\msteams.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=out program="%a" action=block)
+
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\Skype*.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block)
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles%\WindowsApps\Skype*.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=out program="%a" action=block)
