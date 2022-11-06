@@ -2,3 +2,6 @@ echo https://cafe.daum.net/candan/GGFN/380
 echo 랜덤한 중간 부분이 있으면 찾기 어려운대 이렇게 하면 쉽게 찾을수 있다. 그리고 차단 할수 있다. 수상한 연결을 원하는 애들이 있을때 유용 할것 같다.
 for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\Microsoft\EdgeWebView\Application\msedgewebview2.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block)
 for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\Microsoft\EdgeWebView\Application\msedgewebview2.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=out program="%a" action=block)
+
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\WindowsApps\msteams.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=in program="%a" action=block)
+for /f "delims=" %a in ('dir /a-d /b /o /s "%ProgramFiles(x86)%\WindowsApps\msteams.exe"') do (netsh advfirewall firewall add rule name="EdgeWebView_Blockit" dir=out program="%a" action=block)
