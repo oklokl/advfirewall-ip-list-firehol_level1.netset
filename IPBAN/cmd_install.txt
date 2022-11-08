@@ -78,7 +78,7 @@ echo FailedLoginRegex 실패한 로그인 정규식
 echo 로그인 시도 차단 "https://support.forpsi.hu/kb/a612/windows-remote-desktop-protocol-rdp-bejelentkezesi-hiba-elharitas.aspx "
 echo 이게 중요 한것 같음 결론. RDP 차단 1회 부터 차단 틀릴 경우 6으로 하면 6번 틀릴 경우 차단
 * WINDOWS ONLY * 
-<FailedLoginThreshold>1</FailedLoginThreshold>
+<FailedLoginThreshold>6</FailedLoginThreshold>
 
 
 cd "%ProgramFiles%\IPBan" && tar -cvzf "%ProgramFiles%\IPBan\ipban-config2.zip" "ipban.config"
