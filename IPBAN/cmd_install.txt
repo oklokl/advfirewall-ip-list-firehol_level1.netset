@@ -43,7 +43,6 @@ net start IPBAN
 
 
 echo 위의 내용 설명 안하고 그냥 명령어로 했을때
-
 md "%USERPROFILE%\Downloads\IPBan"
 cd "%USERPROFILE%\Downloads\IPBan"
 for /f "delims=" %a in ('dir /a-d /b /o /s "%USERPROFILE%\Downloads\IPBan-Windows-x64*.zip"') do (tar -zxvf "%a" -C ".") 
@@ -61,7 +60,6 @@ notepad "%ProgramFiles%\IPBan\ipban.config"
 
 
 echo "https://memonote.tistory.com/2 "
-
 수정해야 할 부분 정리
 로그인 5회 실패시 등록
 <add key="FailedLoginAttemptsBeforeBan" value="5"/>
@@ -103,18 +101,10 @@ rmdir "%ProgramFiles%\IPBan" /s
 
  
 
- 
-
 기타 번역은
-
 https://cafe.daum.net/candan/GGFN/382   
-
  
-
- 
-
 기타 권한 주기
-
 echo 권한 제한 하기 IPBan 켜는 문제. 네트워크 S-1-5-2
 icacls "%ProgramFiles%\IPBan" 
 takeown /F "%ProgramFiles%\IPBan" /A /r
@@ -133,27 +123,19 @@ icacls "%ProgramFiles%\IPBan" /grant:r Administrators:RX /t
 icacls "%ProgramFiles%\IPBan" 
 
  
-
 echo 수정 해야 할때
-
 takeown /F "%ProgramFiles%\nlog.config.config" /A
-
 takeown /F "%ProgramFiles%\IPBan\ipban.config" /A
-
 icacls "%ProgramFiles%\IPBan\nlog.config" /grant Administrators:F
-
 icacls "%ProgramFiles%\IPBan\ipban.config" /grant Administrators:F
 
  
-
 echo 권한중 경우 삭제 방법
-
 sc.exe stop IPBAN
 sc.exe delete IPBAN
 
 takeown /F "%ProgramFiles%\IPBan" /A /r
 icacls "%ProgramFiles%\IPBan" /grant Administrators:F /t
-
 rd /s /q "%ProgramFiles%\IPBan"
 
 
