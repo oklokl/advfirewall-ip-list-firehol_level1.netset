@@ -133,10 +133,15 @@ icacls "%ProgramFiles%\IPBan\ipban.config" /grant Administrators:F
 echo 권한중 경우 삭제 방법
 sc.exe stop IPBAN
 sc.exe delete IPBAN
-
 takeown /F "%ProgramFiles%\IPBan" /A /r
 icacls "%ProgramFiles%\IPBan" /grant Administrators:F /t
 rd /s /q "%ProgramFiles%\IPBan"
+
+
+echo 권한 처음으로 돌리기
+takeown /F "%ProgramFiles%\IPBan" /A /r
+icacls "%ProgramFiles%\IPBan" /t /q /c /t /reset
+icacls "%ProgramFiles%\IPBan" 
 
 
 https://youtu.be/4BEamJCphKM
