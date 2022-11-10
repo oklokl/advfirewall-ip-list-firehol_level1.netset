@@ -27,7 +27,7 @@ chcp 65001
 @echo.
 set choice=
 set /p choice="[선 택] 알파벳을 Y T N ..D.. 중 누르세요.."
-echo "%choice%".|findstr /x /i "\"[yndcrbs]\"\." 2>nul>nul&&goto :%choice%||goto :main
+echo "%choice%".|findstr /x /i "\"[ytndcrbs]\"\." 2>nul>nul&&goto :%choice%||goto :main
 
 goto :quit
 
