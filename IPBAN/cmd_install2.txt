@@ -1,0 +1,152 @@
+https://cafe.daum.net/candan/BLQD/88
+
+https://github.com/DigitalRuby/IPBan
+https://github.com/DigitalRuby/IPBan/releases 여기서 다운로드 하면 된다.  IPBan-Windows-x64_*_*_*.zip 이런 식의 파일
+
+echo "인터넷에서 다운로드 한다 그럼 다운로드 폴더에 파일이 들어 간다고 가정 하고"
+echo md 폴더 만들기 그리고 cd 그리고 이동하기
+md "%USERPROFILE%\Downloads\IPBan"
+cd "%USERPROFILE%\Downloads\IPBan"
+
+echo "전승환님이 불가능 하다고 생각 해지는 자동 다운로드를 완성 하셨습니다 ㅎㅎ 파워쉘 웹 싸이트 다운로드."
+echo "https://kin.naver.com/qna/detail.nhn?d1Id=1&dirId=104&docId=432288858"
+echo 파워쉘로만 실행 해야 합니다 단점 
+$target = (Invoke-WebRequest -Uri 'https://github.com/DigitalRuby/IPBan/releases').Links.Href | findstr "tree";$targetStr = "";foreach($Line in $target) {$targetStr = $Line;break;}foreach($Line in $targetStr.Split('/')) {$targetStr1 = $Line;}$targetStr2 = $targetStr1 -replace "\.","_";Invoke-WebRequest ('https://github.com/DigitalRuby/IPBan/releases/download/'+$targetStr1+'/IPBan-Windows-x64_'+ $targetStr2 + '.zip') -OutFile ('%USERPROFILE%\Downloads\IPBan\IPBan-Windows-x64.zip');
+
+echo "파일 찾아서 풀어 주기"
+for /f "delims=" %a in ('dir /a-d /b /o /s "%USERPROFILE%\Downloads\IPBan-Windows-x64*.zip"') do (tar -zxvf "%a" -C ".") 
+
+echo "압축해제한 파일을 프로그램 폴더로 이동 시키기"
+xcopy "%USERPROFILE%\Downloads\IPBan" "%ProgramFiles%\IPBan\" /e /h /k
+
+echo "감사 권한을 주기 실패 성공 모두"
+auditpol.exe /set /category:"{69979849-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol.exe /set /category:"{69979850-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+
+echo "서비스 등록 해주기"
+sc.exe create IPBAN type= own start= auto binPath= "%ProgramFiles%\IPBan\DigitalRuby.IPBan.exe" DisplayName= "IPBan Service"
+
+echo "서비스 설명 적어 주기 이런 이런 프로그램 입니다 하고."
+sc.exe description IPBAN "Automatically builds firewall rules for abusive login attempts: https://github.com/DigitalRuby/IPBan"
+
+echo "이건 나도 모름 ㅎㅎ"
+sc.exe failure IPBAN reset= 9999 actions= "restart/60000/restart/60000/restart/60000"
+
+echo "서비스 실행 하기 에러 안나면 첫번째 실행은 성공 한 것입니다."
+sc.exe start IPBAN
+
+echo "일단 서비스 중단 하기 편집 해야 하니"
+net stop IPBAN
+
+echo "편집 하기 전에 저장 해주기 나중에 고장 나면 복구 해야 하니"
+cd "%ProgramFiles%\IPBan" && tar -cvzf "%ProgramFiles%\IPBan\ipban-config.zip" "ipban.config"
+notepad "%ProgramFiles%\IPBan\ipban.config"
+
+echo 실행해 본다 되는지
+net start IPBAN
+
+
+
+echo 위의 내용 설명 안하고 그냥 명령어로 했을때
+md "%USERPROFILE%\Downloads\IPBan"
+cd "%USERPROFILE%\Downloads\IPBan"
+for /f "delims=" %a in ('dir /a-d /b /o /s "%USERPROFILE%\Downloads\IPBan-Windows-x64*.zip"') do (tar -zxvf "%a" -C ".") 
+xcopy "%USERPROFILE%\Downloads\IPBan" "%ProgramFiles%\IPBan\" /e /h /k
+auditpol.exe /set /category:"{69979849-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+auditpol.exe /set /category:"{69979850-797A-11D9-BED3-505054503030}" /success:enable /failure:enable
+sc.exe create IPBAN type= own start= auto binPath= "%ProgramFiles%\IPBan\DigitalRuby.IPBan.exe" DisplayName= "IPBan Service"
+sc.exe description IPBAN "Automatically builds firewall rules for abusive login attempts: https://github.com/DigitalRuby/IPBan"
+sc.exe failure IPBAN reset= 9999 actions= "restart/60000/restart/60000/restart/60000"
+sc.exe start IPBAN
+net stop IPBAN
+cd "%ProgramFiles%\IPBan" && tar -cvzf "%ProgramFiles%\IPBan\ipban-config.zip" "ipban.config"
+notepad "%ProgramFiles%\IPBan\ipban.config"
+
+
+
+echo "https://memonote.tistory.com/2 "
+수정해야 할 부분 정리
+로그인 5회 실패시 등록
+<add key="FailedLoginAttemptsBeforeBan" value="5"/>
+
+ipban 시간 2일
+<add key="BanTime" value="02:00:00:00"/>
+
+차단후 제거 기준일 2일
+<add key="ExpireTime" value="02:00:00:00"/>
+
+
+echo FailedLoginRegex 실패한 로그인 정규식
+<Source>IPBanCustom</Source>
+<FailedLoginThreshold>1</FailedLoginThreshold>
+
+echo 로그인 시도 차단 "https://support.forpsi.hu/kb/a612/windows-remote-desktop-protocol-rdp-bejelentkezesi-hiba-elharitas.aspx "
+echo 이게 중요 한것 같음 결론. RDP 차단 1회 부터 차단 틀릴 경우 6으로 하면 6번 틀릴 경우 차단
+* WINDOWS ONLY * 
+<FailedLoginThreshold>6</FailedLoginThreshold>
+
+
+cd "%ProgramFiles%\IPBan" && tar -cvzf "%ProgramFiles%\IPBan\ipban-config2.zip" "ipban.config"
+다시 다른 이름으로 저장 하기 
+
+echo 실행해 본다 되는지
+net start IPBAN
+
+이걸 이렇게 해야 하는 이유는 지연 시작 하면 한나절 되어서 켜짐 -_-;;
+sc config IPBAN start=auto
+
+로그 보는 방법 여기에 fail 이라고 막 찍히고 이상한 ip 찍히기 시작하면 의심 해봐야 하는 것.
+notepad "%ProgramFiles%\IPBan\logfile.txt"
+
+cd ..
+sc.exe stop IPBAN
+sc.exe delete IPBAN
+rmdir "%ProgramFiles%\IPBan" /s
+만약 서비스가 마음에 안들면 삭제 하기
+
+ 
+
+기타 번역은
+https://cafe.daum.net/candan/GGFN/382   
+ 
+기타 권한 주기
+echo 권한 제한 하기 IPBan 켜는 문제. 네트워크 S-1-5-2
+icacls "%ProgramFiles%\IPBan" 
+takeown /F "%ProgramFiles%\IPBan" /A /r
+icacls "%ProgramFiles%\IPBan" /grant Administrators:F /t
+icacls "%ProgramFiles%\IPBan" /setintegritylevel H /t
+icacls "%ProgramFiles%\IPBan" /deny "Guest:F" "*S-1-5-32-546:F" "*S-1-0-0:F" "*S-1-5-7:F" /t
+icacls "%ProgramFiles%\IPBan" /setowner "NT SERVICE\TrustedInstaller" /t
+icacls "%ProgramFiles%\IPBan" /grant:r Administrators:RX /t
+icacls "%ProgramFiles%\IPBan" 
+
+takeown /F "%ProgramFiles%\IPBan" /A /r
+icacls "%ProgramFiles%\IPBan" /grant Administrators:F /t
+icacls "%ProgramFiles%\IPBan" /remove "*S-1-5-2" /t
+icacls "%ProgramFiles%\IPBan" /setowner "NT SERVICE\TrustedInstaller" /t
+icacls "%ProgramFiles%\IPBan" /grant:r Administrators:RX /t
+icacls "%ProgramFiles%\IPBan" 
+
+ 
+echo 수정 해야 할때
+takeown /F "%ProgramFiles%\nlog.config.config" /A
+takeown /F "%ProgramFiles%\IPBan\ipban.config" /A
+icacls "%ProgramFiles%\IPBan\nlog.config" /grant Administrators:F
+icacls "%ProgramFiles%\IPBan\ipban.config" /grant Administrators:F
+
+ 
+echo 권한중 경우 삭제 방법
+sc.exe stop IPBAN
+sc.exe delete IPBAN
+takeown /F "%ProgramFiles%\IPBan" /A /r
+icacls "%ProgramFiles%\IPBan" /grant Administrators:F /t
+rd /s /q "%ProgramFiles%\IPBan"
+
+
+echo 권한 처음으로 돌리기
+takeown /F "%ProgramFiles%\IPBan" /A /r
+icacls "%ProgramFiles%\IPBan" /t /q /c /t /reset
+icacls "%ProgramFiles%\IPBan" 
+
+
+https://youtu.be/4BEamJCphKM
