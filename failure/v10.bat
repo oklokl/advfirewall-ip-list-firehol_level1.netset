@@ -23,7 +23,7 @@ chcp 65001
 @echo. 
 set choice=
 set /p choice=선택 하세요.
-echo "%choice%".|findstr /x /i "\"[yndcrbs]\"\." 2>nul>nul&&goto :%choice%||goto :main
+echo "%choice%".|findstr /x /i "\"[ytndcrbs]\"\." 2>nul>nul&&goto :%choice%||goto :main
 
 goto :quit
 
