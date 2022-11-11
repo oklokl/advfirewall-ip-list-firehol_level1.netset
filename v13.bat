@@ -253,9 +253,6 @@ REM "중간 부분에 #이 박혀 있는 문서를 뒷 부분을 제외 시키�
 REM " # 하고 양쪽으로 한칸씩 안뛰어서 에러가 났는대 수정함 ㅎㅎ 다행이 고침"
 REM "내가 성공한 약식 https://cafe.daum.net/candan/GGFN/386 더 간단하게 성공 했다 "
 PowerShell -Command "& {Get-Content """"%temp%\threat\threat-100.txt"""" | %{$_ -replace ' # [ -~]*',''} > """"%temp%\out444.txt""""}"
-PowerShell -Command "& {Get-Content """"%temp%\out444.txt"""" | %{$_ -replace '# [ -~]*',''} > """"%temp%\out555.txt""""}"
-
-REM "추가 내용 out444.txt 을 out555.txt로 변경 하였다"
 
 REM 모두 다 하나에 뭉치기
 type %temp%\firehol_level1.netset > %temp%\out.txt
@@ -263,8 +260,7 @@ REM type %temp%\ip2location_country_cn.netset >> %temp%\out.txt
 REM type %temp%\ip2location_country_ru.netset >> %temp%\out.txt
 type %temp%\ip2location_country_kp.netset >> %temp%\out.txt
 
-REM "threat 샵제거된 문서 합치기 out555.txt"
-type %temp%\out555.txt >> %temp%\out.txt
+type %temp%\out444.txt >> %temp%\out.txt
 
 REM 걸러내기 같은 out.txt 라서 out2.txt로 해야 정상적으로 작동 된다.
 REM 차단 주소에서 가정집 공유기 구글 dns를 제외 합니다. 그래야 인터넷이 되니깐요.
