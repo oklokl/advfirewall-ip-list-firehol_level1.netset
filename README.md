@@ -1,8 +1,8 @@
 # advfirewall-ip-list-firehol_level1.netset
-windows default firewall.. Utilize. Easy registration. > firehol_level1.netset
+Windows default firewall.. Utilize. Easy to register for filter list. > firehol_level1.netset
 
-https://youtu.be/LmL0vJG7qqk
-설치 방법 입니다 install
+[다운로드, 실행 및 사용법 youtube](https://youtu.be/W_InIAXNEx8)
+
 ![11](https://user-images.githubusercontent.com/1571600/169641629-b1fe40a7-03bc-4e7f-a19f-5c0f9d8dbfcd.png)
 
 https://cafe.daum.net/candan/BLQD/89 최종버전 v15.bat
@@ -12,8 +12,6 @@ https://cafe.daum.net/candan/BLQD/89 최종버전 v15.bat
 사용법 해당 파일을 클릭 하고 메모장에 다름 이름 모든파일로 하여 저장 하고 v15.bat 명령프롬포트에서 관리자 권한으로 실행 하시면 됩니다.
 
 [v15.bat 클릭](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/v15.bat)
-
-[다운로드, 실행 및 사용법 youtube](https://youtu.be/W_InIAXNEx8)
 
 ```
 http://www.johnwillis.com/2015/12/windows-how-to-firewall-block-list-of.html
