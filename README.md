@@ -123,7 +123,7 @@ v3 라이프 사용 하지만 방어벽이 없는 분들은 쓸만 할꺼에요.
 
 ## 기타 추천 프로그램
 
-### https://www.henrypp.org/product/simplewall . .[simplewall 사용법](https://cafe.daum.net/candan/AurF/74)
+### https://www.henrypp.org/product/simplewall . . [simplewall 사용법](https://cafe.daum.net/candan/AurF/74)
 
 ### https://github.com/DigitalRuby/IPBan . . [IPBan 사용법](https://cafe.daum.net/candan/BLQD/88)
 
