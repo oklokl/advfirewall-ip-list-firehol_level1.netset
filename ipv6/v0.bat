@@ -11,7 +11,7 @@ color 0a
 @echo		"해당 배치 파일 주소 https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset "
 @echo. 
 @echo		Y (그렇다)		"기본 IP 차단 규칙을 적용 할까요?	firehol	"
-@echo		T (그렇다)		"기본 IP 차단 규칙을 적용 할까요?	firehol + IPThreat "
+@echo		T (그렇다)		"기본 IP 차단 규칙을 적용 할까요?	firehol + IPThreat + ipv6 IPThreat"
 @echo		N (종료)		"아무 것도 하지 않고 종료 한다 NO RUN.. OUT.. EXIT"
 @echo. 
 @echo		D (규칙제거)		자작으로 만든 규칙을 모두 제거 한다
