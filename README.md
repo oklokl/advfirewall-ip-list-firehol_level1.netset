@@ -115,17 +115,17 @@ Powershell -Command "& {Start-Process -FilePath """cmd""" -ArgumentList """/c"""
 
 어베스트 방어벽이 활성화 되어 있으면 윈도우 기본 방어벽을 사용 못하니 참고 하시고요 http://www.avast.com/index 무료 방어벽 있는 중에 지금 애가 가장 좋아요.
 
-https://www.ahnlab.com/kr/site/product/productView.do?prodSeq=8&tab=14 
+[v3 라이프 백신](https://www.ahnlab.com/kr/site/product/productView.do?prodSeq=8&tab=14)
 
-v3 라이프 사용 하지만 방어벽이 없는 분들은 쓸만 할꺼에요.
+v3 라이프 사용 하지만 방어벽이 없는 분들은 쓸만 할꺼에요. 해당 백신은 무료 이며 단점은 방어벽 기능 없음
 
 .
 
 ## 기타 추천 프로그램
 
-### https://www.henrypp.org/product/simplewall . . [simplewall 사용법](https://cafe.daum.net/candan/AurF/74)
+### [simplewall 무료 방어벽](https://www.henrypp.org/product/simplewall) . . [simplewall 사용법](https://cafe.daum.net/candan/AurF/74)
 
-### https://github.com/DigitalRuby/IPBan . . [IPBan 사용법](https://cafe.daum.net/candan/BLQD/88)
+### [IPBan 무료 트래픽 방어벽](https://github.com/DigitalRuby/IPBan) . . [IPBan 사용법](https://cafe.daum.net/candan/BLQD/88)
 
 이 프로그램 좋아요 가볍고. 이것도 기본 방어벽을 사용 하여 차단 하는 기능을 합니다.
 
