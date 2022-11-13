@@ -5,14 +5,13 @@ https://youtu.be/LmL0vJG7qqk
 설치 방법 입니다 install
 ![11](https://user-images.githubusercontent.com/1571600/169641629-b1fe40a7-03bc-4e7f-a19f-5c0f9d8dbfcd.png)
 
-
-
-
-https://cafe.daum.net/candan/AurF/102
-
-https://cafe.daum.net/candan/AurF/105 최종버전 v9.bat 200 버전을 받으시면 됩니다. (파일을 ANSI 인코딩 변경 하였습니다) 
+https://cafe.daum.net/candan/BLQD/89 최종버전 v15.bat
 
 나의 개인 홈페이지 입니다. 여기에 주로 업로드 합니다.
+
+사용법 해당 파일을 클릭 하고 메모장에 다름 이름 모든파일로 하여 저장 하고 v15.bat 명령프롬포트에서 관리자 권한으로 실행 하시면 됩니다.
+
+[v15.bat 클릭](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/v15.bat)
 
 ```
 http://www.johnwillis.com/2015/12/windows-how-to-firewall-block-list-of.html
@@ -28,23 +27,28 @@ https://kin.naver.com/qna/detail.naver?d1id=1&dirId=104&docId=419918246&scrollTo
 https://jujun.tistory.com/ 호경이님께서 큰 도움 되셨습니다 인코딩 문제 도와 주셨습니다 글깨지는 문제 
 ```
 
-[https://iplists.firehol.org/files/fireho
-l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset)
-다운로드 주소
+.
 
-https://iplists.firehol.org https://github.com/firehol/blocklist-ipsets/commits/master/firehol_level1.netset
+[fireho
+l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset) 다운로드 주소
 
-제공 싸이트 악성 ip를 리스트로 제공 하는 싸이트 입니다. 하지만 리눅스 기반이기 때문에 윈도우에 맞지 않아서 제가 찾다가 만들게 되었습니다.
+[ipthreat](https://lists.ipthreat.net/file/ipthreat-lists/threat/threat-100.txt) 다운로드 주소
+
+### ip 필터 저작권 회사들 https://iplists.firehol.org, https://mirror.dk.team.blue, https://ipthreat.net/
+
+제공 싸이트 악성 ip를 리스트로 제공 하는 싸이트 입니다. 하지만 파워쉘 및 리눅스 기반이기 때문에 cmd에 윈도우에 맞지 않아서 제가 찾다가 만들게 되었습니다.
+
+.
 
 배치 파일은 명령 프롬포트를 관리자 권한으로 하셔서 실행 하셔야 합니다 cmd 관리자 권한 실행 확장자는 bat로 되어 있어야 하고 
 
 규칙을 등록 할 경우 리스트에 있는 아이피 모두를 차단 하게 됩니다. 제외 하고 싶다면. 저의 개인 홈페이지에 기제 되어 있으니 참고 하세요.
 
 ```
-:: type %temp%\out.txt | findstr /blv "# 123.123. 144.144. 122.22." > %temp%\out.txt
+REM type %temp%\입력_out1.txt | findstr /blv "# 123.123. 144.144. 122.22." > %temp%\출력_out2.txt
 ```
 
-이부분의 주석 :: 을 제거 하고 자신이 원하는 ip를 등록 하면 됩니다.
+이부분의 주석 REM 을 제거 하고 자신이 원하는 ip를 등록 하면 됩니다.
 
 인터넷이 안될 경우 방화벽 로그를 활성화 시키고 차단 된 ip를 확인 해서 리스트에서 제외 시키세요. 로그 보는 방법은 카페에 있습니다 구차니즘 ㅎ https://cafe.daum.net/candan/AurF/100
 
@@ -52,17 +56,12 @@ https://iplists.firehol.org https://github.com/firehol/blocklist-ipsets/commits/
 
 .
 
-파일 정보.
+파일 정보. 약한 차단을 원하시면 아래와 같이 아웃을 REM 주석 처리 하여 해제 하시면 외부 연결은 차단 되지 않습니다.
 
-710.bat(아웃,인) 외부 연결, 내부 연결 양쪽다 차단 (in,out) block [a high level]
-
-810.bat(인) 외부에서 들어 오는 연결만 차단 (in) block [recommend]
-
-910.bat(아웃,인) 실행 할때 등록하는 ip 출력 버전 (in,out) block [Meaningless]
-
-12.bat(아웃,인) 등록 할때 삭제 할때 숫자 카운팅이 있는 버전 (in,out) block 전승환님과 모모님께서 만들어,수정 해주심 [experimental]
-
-차단 되는 규칙은 양쪽 모두 막으면 5천개 정도 되고 한쪽만 막으면 2500개 정도 되네요.
+```
+netsh advfirewall firewall add rule name="Blockit" protocol=any dir=out action=block remoteip=!str!`
+REM netsh advfirewall firewall add rule name="Blockit" protocol=any dir=out action=block remoteip=!str!`
+```
 
 GJ20220522.bat(아웃,인) 게이지바 기능 추가. 전승환님께서 많이 수정해주셨습니다. 2022.05.22
 
@@ -119,7 +118,7 @@ v3 라이프 사용 하지만 방어벽이 없는 분들은 쓸만 할꺼에요.
 
 기타.
 
-https://www.henrypp.org/product/simplewall
+https://www.henrypp.org/product/simplewall [simplewall 사용법](https://cafe.daum.net/candan/AurF/74)
 
 이 프로그램 좋아요 가볍고. 이것도 기본 방어벽을 사용 하여 차단 하는 기능을 합니다.
 
