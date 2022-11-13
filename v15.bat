@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 chcp 65001
+color 0a
 
 :main
 @echo. 
@@ -22,8 +23,8 @@ chcp 65001
 @echo		만일을 위해서 미리 백업을 하세요. 
 @echo		다른 먼져 규칙을 적용 하려면 규칙제거를 하세요.
 @echo.
-@echo		"제작 해주신 분들 모꼬모지, 전승환님 두분께서 만들어 주셨습니다"
-@echo		"jerry-jeremiah, stephan 외국분 들이 답변 주셨습니다"
+@echo		"제작 해주신 분들 호경이님, 모꼬모지, 전승환님 두분께서 만들어 주셨습니다"
+@echo		"jerry-jeremiah, stephan 외국분 들이 답변 주셨습니다 모두 ㄳ 합니다"
 @echo.
 set choice=
 set /p choice="[선 택] 알파벳을 Y T N ..D.. 중 누르세요.."
@@ -258,8 +259,9 @@ REM "20221111 이전 버전 7zip 강재 설치 버전"
 REM "20221113 IPThreat 개발자님이 txt 경로 제공 해주셔서 수정한 버전"
 powershell -Command "& {Invoke-WebRequest -Uri "https://lists.ipthreat.net/file/ipthreat-lists/threat/threat-100.txt" -OutFile $env:temp%\threat-100.txt}"
 
-REM " # 걸러내기 내가 성공한 약식 https://cafe.daum.net/candan/GGFN/386 더 간단하게 성공 했다 "
-PowerShell -Command "& {Get-Content """"%temp%\threat-100.txt"""" | %{$_ -replace ' # [ -~]*',''} > """"%temp%\out444.txt""""}"
+REM " # 걸러내기 내가 성공한 약식 https://cafe.daum.net/candan/GGFN/386 더 간단하게 성공 했다 전승환님 수정 도와주심"
+REM " 당구장 표시 두개를 해야 합니다"
+PowerShell -Command "& {Get-Content %temp%\threat-100.txt | %%{$_ -replace ' # [ -~]*'} > %temp%\out444.txt}"
 
 REM 모두 다 하나에 뭉치기
 type %temp%\firehol_level1.netset > %temp%\out.txt
@@ -309,11 +311,15 @@ echo.
 goto :quit
 
 :quit
+color 07
 REM 최종 목적지 배치 파일 종료
+echo.
 echo "저작권 회사들 Copyright Companies"
+echo.
 echo "해당 필터 리스트는 무료 사용 가능합니다"
 echo "https://iplists.firehol.org/files/firehol_level1.netset"
 echo "https://mirror.dk.team.blue"
 echo "https://ipthreat.net/"
+echo.
 endlocal
 pause
