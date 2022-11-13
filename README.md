@@ -36,7 +36,7 @@ l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset) 다운
 
 ### ip필터 저작권 https://iplists.firehol.org, https://mirror.dk.team.blue, https://ipthreat.net/
 
-### 다운로드 무료 입니다. ^^ :)
+### 다운로드 무료 입니다. ^^ :) IP filter FreeWare
 
 제공 싸이트 악성 ip를 리스트로 제공 하는 싸이트 입니다. 하지만 파워쉘 및 리눅스 기반이기 때문에 cmd에 윈도우에 맞지 않아서 제가 찾다가 만들게 되었습니다.
 
