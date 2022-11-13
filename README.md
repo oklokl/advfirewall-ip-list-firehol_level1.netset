@@ -13,6 +13,8 @@ https://cafe.daum.net/candan/BLQD/89 최종버전 v15.bat
 
 [v15.bat 클릭](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/v15.bat)
 
+[다운로드, 실행 및 사용법 youtube](https://youtu.be/W_InIAXNEx8)
+
 ```
 http://www.johnwillis.com/2015/12/windows-how-to-firewall-block-list-of.html
 이 블러그를 보고 만들었습니다
@@ -34,7 +36,7 @@ l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset) 다운
 
 [ipthreat](https://lists.ipthreat.net/file/ipthreat-lists/threat/threat-100.txt) 다운로드 주소
 
-### ip 필터 저작권 회사들 https://iplists.firehol.org, https://mirror.dk.team.blue, https://ipthreat.net/
+### ip필터 무료 저작자 https://iplists.firehol.org, https://mirror.dk.team.blue, https://ipthreat.net/
 
 제공 싸이트 악성 ip를 리스트로 제공 하는 싸이트 입니다. 하지만 파워쉘 및 리눅스 기반이기 때문에 cmd에 윈도우에 맞지 않아서 제가 찾다가 만들게 되었습니다.
 
@@ -46,6 +48,7 @@ l_level1.netset](https://iplists.firehol.org/files/firehol_level1.netset) 다운
 
 ```
 REM type %temp%\입력_out1.txt | findstr /blv "# 123.123. 144.144. 122.22." > %temp%\출력_out2.txt
+type %temp%\입력_out1.txt | findstr /blv "# 123.123. 144.144. 122.22." > %temp%\출력_out2.txt
 ```
 
 이부분의 주석 REM 을 제거 하고 자신이 원하는 ip를 등록 하면 됩니다.
