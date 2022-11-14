@@ -169,12 +169,20 @@ https://cafe.daum.net/candan/AurF/104 전문가 주소를 활용한 방법 https
 wf.msc
 ```
 
-### [드롭 방식 추가 되었습니다 올래~!](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/Batchfile_drop/v1.bat)
-
 여기에 등록 됩니다
 ![2022-11-13 (3)](https://user-images.githubusercontent.com/1571600/201519899-14538a63-e07d-45d5-9c75-74cdb2b1ef47.png)
 
 Blockit 쉬프트 누른 상태에서 클릭 하시면 전체를 지우실수 있습니다. 다른건 지우지 마세요.
+
+[원격연결관련 보안 설정 1기본값, 0강화](https://cafe.daum.net/candan/GGFN/373) 0상태면 배치파일 실행이 안되네요.
+
+```
+fsutil behavior set symlinkevaluation L2R:0
+fsutil behavior set symlinkevaluation L2R:1
+```
+
+
+### [드롭 방식 추가 되었습니다 올래~!](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/Batchfile_drop/v1.bat)
 
 ### https://github.com/firehol/blocklist-ipsets
 
