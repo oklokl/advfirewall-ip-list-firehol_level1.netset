@@ -169,6 +169,8 @@ https://cafe.daum.net/candan/AurF/104 전문가 주소를 활용한 방법 https
 wf.msc
 ```
 
+### [드롭 방식 추가 되었습니다 올래~!](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/Batchfile_drop/v1.bat)
+
 여기에 등록 됩니다
 ![2022-11-13 (3)](https://user-images.githubusercontent.com/1571600/201519899-14538a63-e07d-45d5-9c75-74cdb2b1ef47.png)
 
