@@ -12,11 +12,13 @@ title 관리자 권한이 시작 되었습니다.
 
 REM "전승환님께서 만들어 주셨습니다. ㄳ 합니다."
 REM "https://kin.naver.com/qna/detail.naver?d1id=1&dirId=104&docId=432652378"
-REM 777777777777777777777777777777777
+REM " 설명 https://cafe.daum.net/candan/GGFN/394"
+REM " 실행 방법 영상 https://youtu.be/R6b0Z511k70"
+REM "777777777777777777777777777777777"
 REM for /f "delims=" %%a in ('type "%DropPath%"') do (
 REM netsh advfirewall firewall add rule name="AAA" dir=in action=block protocol=ANY remoteip="%%a"
 REM )
-REM 777777777777777777777777777777777
+REM "777777777777777777777777777777777"
 
 :main
 @echo		"이 버전은 사용자가 드래그 추가 하는 버전 입니다"
