@@ -129,6 +129,26 @@ echo 윈도우키+R  WF.msc
 echo.
 goto :quit
 
+:b
+REM 규칙을 백업 합니다
+del /f "%temp%\advfirewall_file.wfw" 2> nul
+netsh advfirewall export "%temp%\advfirewall_file.wfw"
+echo.
+echo [알림: 방어벽 설정]
+echo 윈도우키+R  WF.msc
+echo.
+goto :quit
+
+:s
+REM 규칙을 복구 합니다.
+echo 먼져 백업을 하지 않았다면 복구는 되지 않습니다.
+netsh advfirewall import "%temp%\advfirewall_file.wfw"
+echo.
+echo [알림: 방어벽 설정]
+echo 윈도우키+R  WF.msc
+echo.
+goto :quit
+
 :quit
 cls
 color 07
