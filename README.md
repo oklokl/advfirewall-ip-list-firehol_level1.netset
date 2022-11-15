@@ -182,7 +182,7 @@ fsutil behavior set symlinkevaluation L2R:1
 ```
 
 
-### [드롭 방식 추가 되었습니다 올래~!](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/blob/main/Batchfile_drop/v1.bat)
+### [드롭 방식 추가 되었습니다 올래~!](https://github.com/oklokl/advfirewall-ip-list-firehol_level1.netset/releases/tag/Drop02)
 
 ### https://github.com/firehol/blocklist-ipsets
 
