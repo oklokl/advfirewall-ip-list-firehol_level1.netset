@@ -199,7 +199,7 @@ goto :quit
 
 :b
 REM 규칙을 백업 합니다
-del /f "%temp%\advfirewall_file.wfw" 2> null
+del /f "%temp%\advfirewall_file.wfw" 2> nul
 netsh advfirewall export "%temp%\advfirewall_file.wfw"
 echo.
 echo [알림: 방어벽 설정]
