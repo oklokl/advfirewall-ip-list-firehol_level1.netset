@@ -26,6 +26,7 @@ https://kin.naver.com/qna/detail.naver?d1id=1&dirId=104&docId=419918246&scrollTo
 
 https://jujun.tistory.com/ 호경이님께서 큰 도움 되셨습니다 인코딩 문제 도와 주셨습니다 글깨지는 문제 
 ```
+[모꼬모지 배치파일](https://www.youtube.com/@mokomoji)
 
 .
 
