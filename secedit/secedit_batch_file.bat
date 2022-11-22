@@ -28,19 +28,19 @@ type %temp%\9.txt | powershell -Command "$input | ForEach-Object { $_ -replace \
 IF ERRORLEVEL 1 goto end
 type %temp%\10.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"LimitBlankPasswordUse=4,0\",	 \"LimitBlankPasswordUse=4,1\" }" > %temp%\11.txt
 IF ERRORLEVEL 1 goto end
-type %temp%\11.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"LmCompatibilityLevel=4,5\",	 \"LmCompatibilityLevel=4\,5`nMACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\allownullsessionfallback=4,0\" }" > %temp%\12.txt
+type %temp%\11.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"LmCompatibilityLevel=4,5\",	 \"LmCompatibilityLevel=4,5`nMACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\allownullsessionfallback=4,0\" }" > %temp%\12.txt
 IF ERRORLEVEL 1 goto end
-type %temp%\12.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"NTLMMinClientSec=4,524288\",	 \"NTLMMinClientSec=4\,537395200\" }" > %temp%\13.txt
+type %temp%\12.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"NTLMMinClientSec=4,524288\",	 \"NTLMMinClientSec=4,537395200\" }" > %temp%\13.txt
 IF ERRORLEVEL 1 goto end
-type %temp%\13.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"NTLMMinServerSec=4,536870912\",	 \"NTLMMinServerSec=4\,537395200`nMACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\RestrictReceivingNTLMTraffic=4,2\" }" > %temp%\14.txt
+type %temp%\13.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"NTLMMinServerSec=4,536870912\",	 \"NTLMMinServerSec=4,537395200`nMACHINE\System\CurrentControlSet\Control\Lsa\MSV1_0\RestrictReceivingNTLMTraffic=4,2\" }" > %temp%\14.txt
 IF ERRORLEVEL 1 goto end
-type %temp%\14.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"NoLMHash=4,1\",	 \"NoLMHash=4\,1`nMACHINE\System\CurrentControlSet\Control\Lsa\pku2u\AllowOnlineID=4,0\" }" > %temp%\15.txt
+type %temp%\14.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"NoLMHash=4,1\",	 \"NoLMHash=4,1`nMACHINE\System\CurrentControlSet\Control\Lsa\pku2u\AllowOnlineID=4,0\" }" > %temp%\15.txt
 IF ERRORLEVEL 1 goto end
 type %temp%\15.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"SubmitControl=4,0\",	 \"SubmitControl=4,0`nMACHINE\System\CurrentControlSet\Control\Lsa\UseMachineId=4,1\" }" > %temp%\16.txt
 IF ERRORLEVEL 1 goto end
 type %temp%\16.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"AddPrinterDrivers=4,0\",	 \"AddPrinterDrivers=4,0`nMACHINE\System\CurrentControlSet\Control\SAM\MinimumPasswordLengthAudit=4,7\" }" > %temp%\17.txt
 IF ERRORLEVEL 1 goto end
-type %temp%\17.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"EnableSecuritySignature=4,0\",	 \"EnableSecuritySignature=4\,1\" }" > %temp%\18.txt
+type %temp%\17.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"EnableSecuritySignature=4,0\",	 \"EnableSecuritySignature=4,1\" }" > %temp%\18.txt
 IF ERRORLEVEL 1 goto end
 type %temp%\18.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"RequireSecuritySignature=4,0\",	 \"RequireSecuritySignature=4,1\" }" > %temp%\19.txt
 IF ERRORLEVEL 1 goto end
@@ -61,7 +61,7 @@ IF ERRORLEVEL 1 goto end
 type %temp%\25.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"SeDenyNetworkLogonRight = Guest\",	 \"SeDenyNetworkLogonRight = Guest,*S-1-5-32-546,*S-1-0-0,*S-1-5-7,*S-1-5-14,*S-1-5-17,*S-1-5-32-555,*S-1-5-32-568,*S-1-5-32-575,*S-1-5-32-576,*S-1-5-32-577,*S-1-5-9,*S-1-5-113,*S-1-5-80-0,*S-1-5-2\" }" > %temp%\26.txt
 IF ERRORLEVEL 1 goto end
 type %temp%\26.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"SeDenyInteractiveLogonRight = Guest\",	 \"SeDenyInteractiveLogonRight = Guest,*S-1-5-32-546,*S-1-0-0,*S-1-5-7,*S-1-5-14,*S-1-5-17,*S-1-5-32-555,*S-1-5-32-568,*S-1-5-32-575,*S-1-5-32-576,*S-1-5-32-577,*S-1-5-9,*S-1-5-2`nSeDenyBatchLogonRight = Guest,*S-1-5-32-546,*S-1-0-0,*S-1-5-7,*S-1-5-14,*S-1-5-17,*S-1-5-32-555,*S-1-5-32-568,*S-1-5-32-575,*S-1-5-32-576,*S-1-5-32-577,*S-1-5-9,*S-1-5-2`nSeDenyServiceLogonRight = Guest,*S-1-5-32-546,*S-1-0-0,*S-1-5-7,*S-1-5-14,*S-1-5-17,*S-1-5-32-555,*S-1-5-32-568,*S-1-5-32-575,*S-1-5-32-576,*S-1-5-32-577,*S-1-5-9,*S-1-5-2`nSeDenyRemoteInteractiveLogonRight = Guest,*S-1-5-32-546,*S-1-0-0,*S-1-5-7,*S-1-5-113,*S-1-5-14,*S-1-5-17,*S-1-5-32-555,*S-1-5-32-568,*S-1-5-32-575,*S-1-5-32-576,*S-1-5-32-577,*S-1-5-9,*S-1-5-32-544,*S-1-1-0,*S-1-2-0,*S-1-2-1,*S-1-5-80-0,*S-1-5-2\" }" > %temp%\27.txt
-pause
+
 IF ERRORLEVEL 1 goto end
 type %temp%\27.txt | powershell -Command "$input | ForEach-Object { $_ -replace \"SeRemoteInteractiveLogonRight = \*S-1-5-32-544,\*S-1-5-32-555\",	 \"Administrator\" }" > %temp%\28.txt
 IF ERRORLEVEL 1 goto end
