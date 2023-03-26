@@ -1,0 +1,4 @@
+https://cafe.daum.net/candan/GGFN/475
+
+REM 현재 날짜 시간 초단위 까지 압축 하기 tar
+powershell -Command "& { $datetime = (Get-Date).ToString('yyyyMMddHHmmss'); Compress-Archive -Path '%ProgramFiles%\IPBan\ipban.config' -DestinationPath ('%ProgramFiles%\IPBan\ipbanconfig' + $datetime + '.zip'); }"
