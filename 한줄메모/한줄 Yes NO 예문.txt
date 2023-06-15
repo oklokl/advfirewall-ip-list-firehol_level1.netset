@@ -18,3 +18,6 @@ dir %windir%\System32\winevt\Logs\Archive-Security*.evtx /s /b && powershell.exe
 
 REM 한줄씩 뛰우기
 echo. && dir %windir%\System32\winevt\Logs\Archive-Security*.evtx /s /b && echo. && powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니까? (Yes/No): '; if ('Yes', 'Y' -contains $answer.ToUpper()) {Get-ChildItem -Path * | Format-Wide -Column 2} else {echo '삭제를 취소합니다.'}}"
+
+REM 실전 내용 보여주고 삭제 할지 예스노
+echo. && dir %windir%\System32\winevt\Logs\Archive-Security*.evtx /s /b && echo. && powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니까? (Yes/No): '; if ('Yes', 'Y' -contains $answer.ToUpper()) {Remove-Item -Recurse $env:windir\System32\winevt\Logs\Archive-Security*.evtx} else {echo '삭제를 취소합니다.'}}"
