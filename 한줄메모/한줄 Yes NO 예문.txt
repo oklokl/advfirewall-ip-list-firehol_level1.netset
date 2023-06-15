@@ -6,3 +6,8 @@ powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니
 
 REM 해석
 powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니까? (Yes/No): '; if ('Yes', 'Y' -contains $answer.ToUpper()) {Yes 명령어 실행 되는 부분} else {echo '삭제를 취소합니다.'}}"
+
+
+REM 실전
+REM 파워쉘에서는 %windir% 경로도 다르게 써주어야 한다
+powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니까? (Yes/No): '; if ('Yes', 'Y' -contains $answer.ToUpper()) {Remove-Item -Recurse $env:windir\System32\winevt\Logs\Archive-Security*.evtx} else {echo '삭제를 취소합니다.'}}"
