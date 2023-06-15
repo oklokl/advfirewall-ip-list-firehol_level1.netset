@@ -1,0 +1,8 @@
+
+REM https://cafe.daum.net/candan/GGFN/517
+
+REM 예시
+powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니까? (Yes/No): '; if ('Yes', 'Y' -contains $answer.ToUpper()) {Get-ChildItem -Path * | Format-Wide -Column 2} else {echo '삭제를 취소합니다.'}}"
+
+REM 해석
+powershell.exe -Command "& {$answer = Read-Host '파일을 삭제하시겠습니까? (Yes/No): '; if ('Yes', 'Y' -contains $answer.ToUpper()) {Yes 명령어 실행 되는 부분} else {echo '삭제를 취소합니다.'}}"
